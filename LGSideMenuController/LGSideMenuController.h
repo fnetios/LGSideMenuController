@@ -72,18 +72,18 @@ typedef void (^ _Nullable LGSideMenuHandler)(LGSideMenuController * _Nonnull sid
 typedef void (^ _Nullable LGSideMenuAnimationsBlock)(LGSideMenuController * _Nonnull sideMenuController, UIView * _Nonnull view, NSTimeInterval duration);
 
 typedef NS_OPTIONS(NSUInteger, LGSideMenuAlwaysVisibleOptions) {
-    LGSideMenuAlwaysVisibleOnNone           = 0,
-    LGSideMenuAlwaysVisibleOnLandscape      = 1 << 1,
-    LGSideMenuAlwaysVisibleOnPortrait       = 1 << 2,
-    LGSideMenuAlwaysVisibleOnPad            = 1 << 3,
-    LGSideMenuAlwaysVisibleOnPhone          = 1 << 4,
-    LGSideMenuAlwaysVisibleOnPadLandscape   = 1 << 5,
-    LGSideMenuAlwaysVisibleOnPadPortrait    = 1 << 6,
-    LGSideMenuAlwaysVisibleOnPhoneLandscape = 1 << 7,
-    LGSideMenuAlwaysVisibleOnPhonePortrait  = 1 << 8,
-    LGSideMenuAlwaysVisibleOnAll            = 1 << 9,
-    LGSideMenuAlwaysVisibleOnHorizontalSizeClassCompact   = 1 << 10,
-    LGSideMenuAlwaysVisibleOnHorizontalSizeClassRegular   = 1 << 11
+    LGSideMenuAlwaysVisibleOnNone                       = 0,
+    LGSideMenuAlwaysVisibleOnLandscape                  = 1 << 1,
+    LGSideMenuAlwaysVisibleOnPortrait                   = 1 << 2,
+    LGSideMenuAlwaysVisibleOnPad                        = 1 << 3,
+    LGSideMenuAlwaysVisibleOnPhone                      = 1 << 4,
+    LGSideMenuAlwaysVisibleOnPadLandscape               = 1 << 5,
+    LGSideMenuAlwaysVisibleOnPadPortrait                = 1 << 6,
+    LGSideMenuAlwaysVisibleOnPhoneLandscape             = 1 << 7,
+    LGSideMenuAlwaysVisibleOnPhonePortrait              = 1 << 8,
+    LGSideMenuAlwaysVisibleOnAll                        = 1 << 9,
+    LGSideMenuAlwaysVisibleOnHorizontalSizeClassCompact = 1 << 10,
+    LGSideMenuAlwaysVisibleOnHorizontalSizeClassRegular = 1 << 11
 };
 
 typedef NS_ENUM(NSUInteger, LGSideMenuPresentationStyle) {
