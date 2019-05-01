@@ -81,7 +81,9 @@ typedef NS_OPTIONS(NSUInteger, LGSideMenuAlwaysVisibleOptions) {
     LGSideMenuAlwaysVisibleOnPadPortrait    = 1 << 6,
     LGSideMenuAlwaysVisibleOnPhoneLandscape = 1 << 7,
     LGSideMenuAlwaysVisibleOnPhonePortrait  = 1 << 8,
-    LGSideMenuAlwaysVisibleOnAll            = 1 << 9
+    LGSideMenuAlwaysVisibleOnAll            = 1 << 9,
+    LGSideMenuAlwaysVisibleHorizontalSizeClassCompact   = 1 << 10,
+    LGSideMenuAlwaysVisibleHorizontalSizeClassRegular   = 1 << 11
 };
 
 typedef NS_ENUM(NSUInteger, LGSideMenuPresentationStyle) {

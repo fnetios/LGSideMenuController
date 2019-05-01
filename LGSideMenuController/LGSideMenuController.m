@@ -1177,31 +1177,31 @@ rightViewBackgroundImageFinalScale = _rightViewBackgroundImageFinalScale;
 }
 
 - (BOOL)isLeftViewAlwaysVisibleForOrientation:(UIInterfaceOrientation)orientation {
-    return ((self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnAll) ||
-            (UIInterfaceOrientationIsPortrait(orientation) && self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPortrait) ||
-            (UIInterfaceOrientationIsLandscape(orientation) && self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnLandscape) ||
-            (LGSideMenuHelper.isPhone &&
-             ((self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPhone) ||
-              (UIInterfaceOrientationIsPortrait(orientation) && self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPhonePortrait) ||
-              (UIInterfaceOrientationIsLandscape(orientation) && self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPhoneLandscape))) ||
-            (LGSideMenuHelper.isPad &&
-             ((self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPad) ||
-              (UIInterfaceOrientationIsPortrait(orientation) && self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPadPortrait) ||
-              (UIInterfaceOrientationIsLandscape(orientation) && self.leftViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPadLandscape))));
+    return [self isViewAlwaysVisibleWithOptions:self.leftViewAlwaysVisibleOptions forOrientation:orientation];
 }
 
 - (BOOL)isRightViewAlwaysVisibleForOrientation:(UIInterfaceOrientation)orientation {
-    return ((self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnAll) ||
-            (UIInterfaceOrientationIsPortrait(orientation) && self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPortrait) ||
-            (UIInterfaceOrientationIsLandscape(orientation) && self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnLandscape) ||
+    return [self isViewAlwaysVisibleWithOptions:self.rightViewAlwaysVisibleOptions forOrientation:orientation];
+}
+
+- (BOOL)isViewAlwaysVisibleWithOptions:(LGSideMenuAlwaysVisibleOptions)options
+                        forOrientation:(UIInterfaceOrientation)orientation {
+    return ((options & LGSideMenuAlwaysVisibleOnAll) ||
+            (UIInterfaceOrientationIsPortrait(orientation) && options & LGSideMenuAlwaysVisibleOnPortrait) ||
+            (UIInterfaceOrientationIsLandscape(orientation) && options & LGSideMenuAlwaysVisibleOnLandscape) ||
             (LGSideMenuHelper.isPhone &&
-             ((self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPhone) ||
-              (UIInterfaceOrientationIsPortrait(orientation) && self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPhonePortrait) ||
-              (UIInterfaceOrientationIsLandscape(orientation) && self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPhoneLandscape))) ||
+             ((options & LGSideMenuAlwaysVisibleOnPhone) ||
+              (UIInterfaceOrientationIsPortrait(orientation) && options & LGSideMenuAlwaysVisibleOnPhonePortrait) ||
+              (UIInterfaceOrientationIsLandscape(orientation) && options & LGSideMenuAlwaysVisibleOnPhoneLandscape))) ||
             (LGSideMenuHelper.isPad &&
-             ((self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPad) ||
-              (UIInterfaceOrientationIsPortrait(orientation) && self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPadPortrait) ||
-              (UIInterfaceOrientationIsLandscape(orientation) && self.rightViewAlwaysVisibleOptions & LGSideMenuAlwaysVisibleOnPadLandscape))));
+             ((options & LGSideMenuAlwaysVisibleOnPad) ||
+              (UIInterfaceOrientationIsPortrait(orientation) && options & LGSideMenuAlwaysVisibleOnPadPortrait) ||
+              (UIInterfaceOrientationIsLandscape(orientation) && options & LGSideMenuAlwaysVisibleOnPadLandscape))) ||
+            ((options & LGSideMenuAlwaysVisibleHorizontalSizeClassRegular) &&
+             self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) ||
+            ((options & LGSideMenuAlwaysVisibleHorizontalSizeClassCompact) &&
+             self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact)
+            );
 }
 
 #pragma mark - Delegate
