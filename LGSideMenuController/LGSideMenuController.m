@@ -1197,9 +1197,9 @@ rightViewBackgroundImageFinalScale = _rightViewBackgroundImageFinalScale;
              ((options & LGSideMenuAlwaysVisibleOnPad) ||
               (UIInterfaceOrientationIsPortrait(orientation) && options & LGSideMenuAlwaysVisibleOnPadPortrait) ||
               (UIInterfaceOrientationIsLandscape(orientation) && options & LGSideMenuAlwaysVisibleOnPadLandscape))) ||
-            ((options & LGSideMenuAlwaysVisibleHorizontalSizeClassRegular) &&
+            ((options & LGSideMenuAlwaysVisibleOnHorizontalSizeClassRegular) &&
              self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) ||
-            ((options & LGSideMenuAlwaysVisibleHorizontalSizeClassCompact) &&
+            ((options & LGSideMenuAlwaysVisibleOnHorizontalSizeClassCompact) &&
              self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact)
             );
 }
